@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+    	<title>Assignment-1</title>
+    	<link rel="stylesheet" href="css/main.css">
+    	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+    	
+    </head>
+    <body>
+    <header class="Header">
+    	<nav class="navigation">
+    		<ul>
+    			<li ><img class="img_user" src="images/google1.PNG" /></li>
+    			<li class="username"><p>Manthan</p></li>
+    			<li>
+    				<ul class="sprite">
+    					<li><a href="#" ><img src="images/google1.PNG" height="25px" width="25px" /> </a></li> 
+    					<li><a href="#" ><img src="images/twit.png" height="25px" width="25px" /> </a></li> 
+    					<li><a href="#" ><img src="images/search.png" height="25px" width="25px" /> </a></li> 
+                    </ul>
+    			</li>
+    		</ul> <!-- End of ul tag -->
+    	</nav>     <!-- End of nav tag -->
+    </header>
+
+    <section class="main_wrapper">
+        <section class="content_header">
+            <p >User Profile </p>
+        </section> <!-- End of .content_header class -->
+    	
+        <section class="wrapper1">
+             <article></article>
+             <p> Upload Picture </p>
+             <form action="">
+                 <input type="text" placeholder="Upload Picture" class="user_input" require/>
+                 <label for="file-upload" class="user_submit">
+                     Browse</label>
+                 <input id="file-upload" type="file"/> <br>
+                 <input type="submit" value="Upload" class="user_upload" />
+            </form> <!-- Form completed -->
+    	</section> <!-- End of .wrapper1 class -->
+    	
+        <section class="wrapper2">
+            <form action="" class="user_form">
+                <section class="login_info">
+                    <p style="font-size:120%;"> Login Information </p>
+                    <span>UserName: </span><input type="text" placeholder=" Username" require/> <br>
+                    <span>EmailID: </span><input type="email" placeholder=" Email" require/> <br>
+                    <span>Password: </span><input type="password" placeholder=" Password" require/> <br>
+                    <span>Confirm Password: </span><input type="password" placeholder=" Confirm Password" require/> <br>
+                    <span>Access Level :</span><input type="radio" placeholder="Select Your Profile" style="margin-top:10px;" name="a_level" value="Admin"> Admin 
+                    <input type="radio" name="a_level" value="User">User<br>
+                </section> <!-- End of .login_info class -->
+
+            <section class="persn_info">
+                <p style="font-size:120%;"> Personal Information </p>
+                <span>FirstName: </span><input type="text" placeholder=" FirstName" require/> <br>
+                <span>LastName: </span><input type="text" placeholder=" LastName" require/> <br>
+                <span>EmployeeID: </span><input type="text" placeholder=" EmployeeID" require/> <br>
+                <span>Location:</span><input type="text" placeholder=" Location" /> <br>
+                <span>About:</span><input type="text" placeholder=" About">
+            </section> <!-- End of persn_info class -->
+
+            <section class="Greetings">
+                <p style="font-size:120%;"> Add New Greetings </p>
+                <span>Upload Greetings: </span><input type="text" placeholder="Upload Greetings" /><label for="file-upload" class="user_greetings">
+                     Browse</label>
+                 <input id="file-upload" type="file"/> <br>
+                <span class="text-comp">(upload greetings in .jpg , .png and .pdf format only)</span> <br>
+                <div class="greetings">
+                No Image Available.
+                </div> <!-- End of .greetings class -->
+            </section> <!-- End of .Greetings Section -->
+
+            <section class="form_submit">
+                <input type="button" value="Cancel" />
+                <input type="Submit" value="Save" >
+             </section> <!-- End of .form_submit class -->
+            </form> <!-- End of Form with class = .user_form -->
+    </section>
+    </section> <!-- end of .main_wrapper class section -->
+
+
+    <footer style="background-color:#3c3c3c; height:35px;">
+    </footer>
+        
+    </body>
+</html>
+

@@ -1,0 +1,109 @@
+* {
+  box-sizing:border-box;
+  }
+
+/*---- Making the Parents height proper because of float. ---- */
+
+%common_afterproperty 
+{
+  
+  clear:both;
+	content: "";
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+
+// ---------------------- Border  ---------------
+
+%common_border 
+{
+  border-bottom:1px solid #e1e1e1; 
+	border-width:thin;
+}
+
+// ---------------------- Main Section Common Property ----
+
+%common_wrapper1 
+{
+  width:40%;
+  text-shadow: 1px 1px  #e1e1e1;
+}
+
+// Commong properties for text box 
+
+%common_input 
+{
+  
+  padding:5px 0 5px 5px;
+    width:50%;
+    margin:5px 0 5px 0;
+    font-family: 'Slabo 27px',serif;
+}
+
+// Common properties for Buttons
+
+%common_formsubmitbuttons 
+{
+	border: 1px solid grey;
+  border-width: thin;
+  box-shadow: 1px 1px #e1e1e1;
+  float: right;
+  padding: 8px;
+  margin: 5px 7px 2px auto;
+  text-decoration: none;
+  display: block;
+  font-family: "SegoeUI SemiBold";
+  border-radius: 3px;
+}
+
+// Common Properties when button hovered
+
+%common_formsubmitbuttonsOnHover 
+{
+	
+	background-color: #209982;
+  	color: #e1e1e1;
+}
+
+
+// For hiding input type=file button
+
+%common_hideinputtypefile 
+{
+    
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+// Styling file(browse) Label
+
+%common_styleinputlabel 
+{
+    
+    border-radius:3px;
+    background-color: buttonface;
+    display: inline;
+    align-items: flex-start;
+    text-align: center;
+    cursor: pointer;
+    color: buttontext;
+    border-width: 2px;
+    border-style: groove;
+    border-color: buttonface;
+    -webkit-appearance: push-button;
+    
+}
+
+// Hover property 
+%common_hoverstyle 
+{
+    
+    background-color: #209982;
+    border:1px solid black;
+    
+}
