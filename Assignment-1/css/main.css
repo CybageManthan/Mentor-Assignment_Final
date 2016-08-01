@@ -22,7 +22,6 @@ body nav ul:after, body nav ul.sprite:after, .main_wrapper .content_header:after
 /* line 27, ../sass/base/_inherited.scss */
 .main_wrapper .wrapper1 .user_submit, .main_wrapper .wrapper1 .user_upload {
   width: 40%;
-  text-shadow: 1px 1px  #e1e1e1;
 }
 
 /* line 35, ../sass/base/_inherited.scss */
