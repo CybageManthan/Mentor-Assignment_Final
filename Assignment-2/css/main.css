@@ -302,7 +302,7 @@ body nav ul.sprite a {
 /* ----------------- For chrome ------------- */
  .red_alert::-webkit-input-placeholder {
 color: #BE4B49 !important;
-background:url('../images/caution2.png') right no-repeat ;
+background:url('../images/caution2.PNG') right no-repeat ;
 line-height: 1.8em;
 font-weight: 480;
 letter-spacing: 0.4px;
@@ -311,7 +311,7 @@ letter-spacing: 0.4px;
 /*---------------- For Mozilla---------------*/
 .red_alert::-moz-input-placeholder {
 color: #BE4B49 !important;
-background:url('../images/caution2.png') right no-repeat ;
+background:url('../images/caution2.PNG') right no-repeat ;
 line-height: 1.8em;
 font-weight: 480;
 letter-spacing: 0.4px;
@@ -321,7 +321,7 @@ letter-spacing: 0.4px;
 .red_alert:-ms-input-placeholder {
 
   color: #BE4B49 !important;
-  background: transparent url('../images/caution2.png') right no-repeat ;
+  background: transparent url('../images/caution2.PNG') right no-repeat ;
   line-height: 1.8em;
   font-weight: 480;
   letter-spacing: 0.4px;
