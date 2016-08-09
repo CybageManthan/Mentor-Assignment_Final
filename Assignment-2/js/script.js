@@ -233,7 +233,7 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 			} else {
 
-				var Re_empid = /^[0-9]{6}$/;
+				var Re_empid = /^[0-9]{5}$/;
 
 				if(Re_empid.test(empid)) {
 
