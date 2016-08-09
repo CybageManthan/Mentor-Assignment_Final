@@ -1,0 +1,306 @@
+@import '../base/_inherited.scss';
+@import '../base/_mixins.scss';
+
+
+
+
+body {
+
+ 	margin: 0;
+ 	padding: 0;
+ 	background-color: #f0f0f0;
+    font-family: 'Slabo 27px',serif;
+ 
+  .Header {
+
+ 	height: 60px;
+ 	color: #f0f0f0;
+ 	background-color:#3c3c3c;
+ 	border-bottom: 1px solid #0eb0ff;
+ 	border-width: thick;
+ 	}
+ 	
+ 	nav
+ 	{
+		display: inline-block;
+		float: right;
+		padding:0.75%;
+		margin-right:10%; 
+	
+		ul 
+		{
+		  margin: 0;
+		  padding: 0;
+		  list-style: none;
+		    
+		}
+  
+ 	 	ul:after{
+    	@extend %common_afterproperty;
+  		}
+
+  		li {
+			  float:left;
+			  text-align: center;
+		  }
+  
+		.img_user
+		{
+			height: 35px;
+			width: 35px;
+			border:1px solid white;
+			border-width: thin;
+			border-radius: 4px;
+		}
+
+		.username 
+		{
+			padding: 0px 30px 8px 5px;
+			border-right:0.3px solid black;
+			border-color:grey;
+			border-width:thin;
+		}
+
+		li.username 
+		{
+  
+  			p {
+
+				margin:8px 0px 0px 5px; 
+				text-shadow:2px 2px black;
+			  }
+  		}
+  
+		ul.sprite 
+		{
+
+		  margin: 0;
+		  padding: 0;
+		  list-style: none;
+  
+  		li {
+   
+			  float: left;
+			  text-align: center;
+			  padding: 5px 5px 5px 7px;
+			  text-shadow: 1px 1px white;
+			    
+  			}
+
+		  a {
+		    	text-decoration:none;
+		    }
+		}
+
+		ul.sprite:after 
+		{
+  			@extend %common_afterproperty;
+		}
+
+	}
+}
+
+.main_wrapper {
+
+	width:960px;
+	margin:0 auto;
+	
+	.content_header > p 
+	{
+
+		font-size:175%;
+		@extend %common_border;
+		text-shadow: 1px 1px #e1e1e1;
+		margin: 0px 0px 10px 0px;
+		padding: 18px 0 8px 0;
+	} 
+
+  .content_header:after {
+
+    @extend %common_afterproperty;
+  }
+
+	.user_form 
+	{
+		span {
+  
+				  width: 30%;
+				  display: inline-block;
+				  margin: 0;
+			 }
+	}
+}
+
+.main_wrapper:after 
+{
+  
+   @extend %common_afterproperty;
+}
+.main_wrapper .wrapper1 {
+
+	float:left;
+	width:30%;
+	height: 250px;
+	
+	> article 
+	{
+
+		background-color: #dddddd;
+		width:50%;
+		height:50%;
+		margin: 0px auto 0px 0px;
+	}
+	
+	> p 
+	{
+
+		margin:8px 0 4px 0;
+		text-shadow: 1px 1px grey;
+		font-size:90%;
+		padding:2px;
+	    @extend %common_border;
+	
+    }
+	
+	.user_input {
+
+	padding: 5px;
+	width: 55%;
+	margin-top:5px;
+    font-family: 'Slabo 27px',serif;
+    }
+
+    .user_submit 
+    {
+        @extend %common_wrapper1;
+        @extend %common_styleinputlabel;
+        margin-left: 10px;
+        padding:5px;
+    }
+    
+    .user_submit:hover {
+    
+    	@extend %common_hoverstyle;
+    }
+
+	.user_upload {
+
+	    @extend %common_wrapper1;
+	    padding:7px;
+	    margin:10px 0 0 0;
+	    display:block;    
+	}
+
+	input[type="file"] 
+    {
+        @extend %common_hideinputtypefile;
+    }
+
+}
+
+.main_wrapper .wrapper2 {
+
+	float:right;
+	width:70%;
+	padding-left: 30px;
+	
+	section.login_info ,section.persn_info 
+	{
+    	margin-bottom: 20px;
+	}
+    
+
+	section.login_info input[type="text"] ,section.persn_info input[type="text"] ,section.login_info input[type="email"],section.login_info input[type="password"] 
+	{
+	  @extend %common_input;
+	}
+	
+}
+
+.wrapper2 {
+  
+  section.Greetings 
+  {
+    margin-bottom: 20px;
+    
+    input[type="text"] 
+    {
+      
+      @include Greetingsinputbutton(40%);  
+    }
+    
+    input[type="button"] {
+      
+      @include Greetingsinputbutton(20%);
+    }
+    
+    .greetings {
+    
+    text-align:center;
+    height:130px; 
+    width:400px; 
+    border:1px solid grey; 
+    border-width: thin; 
+    margin-left:120px; 
+    margin-top:20px; 
+    padding:8.5%;
+        }
+        
+    .text-comp {
+    display:inline;
+    color:forestgreen;
+    padding-left: 22%;
+      }
+    }
+    
+    .form_submit {
+  
+    background-color:#e1e1e1;
+    margin:0 auto 20px -320px;
+    height:45px; 
+    width:960px;
+  
+   input[type="button"] {
+    @extend %common_formsubmitbuttons;
+    }
+    
+    input[type="submit"] {
+    @extend %common_formsubmitbuttons;
+    }
+    
+     input[type="button"]:hover {
+      @extend %common_formsubmitbuttonsOnHover;
+    }
+     input[type="submit"]:hover {
+    
+    @extend %common_formsubmitbuttonsOnHover;
+  }
+}
+  
+}
+
+.Greetings {
+    
+    input[type="file"] {
+        
+        @extend %common_hideinputtypefile;
+        }
+      
+    .user_greetings {
+        
+        @extend %common_styleinputlabel;
+         padding:3px 10px 3px 10px;
+        
+        }
+      .user_greetings:hover {
+        
+        @extend %common_hoverstyle;
+        }
+    
+    }
+
+body:after {
+  
+  @extend %common_afterproperty;
+}
+

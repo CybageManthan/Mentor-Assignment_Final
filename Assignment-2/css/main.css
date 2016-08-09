@@ -1,0 +1,402 @@
+@import url(https://fonts.googleapis.com/css?family=Lora);
+
+/* line 1, ../sass/base/_inherited.scss */
+* {
+  box-sizing: border-box;
+}
+
+/*---- Making the Parents height proper because of float. ---- */
+/* line 7, ../sass/base/_inherited.scss */
+body nav ul:after, body nav ul.sprite:after, .main_wrapper .content_header:after, .main_wrapper:after, body:after {
+  clear: both;
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+
+/* line 19, ../sass/base/_inherited.scss */
+.main_wrapper .content_header > p, .main_wrapper .wrapper1 > p {
+  border-bottom: 1px solid #e1e1e1;
+  border-width: thin;
+}
+
+/* line 27, ../sass/base/_inherited.scss */
+.main_wrapper .wrapper1 .user_submit, .main_wrapper .wrapper1 .user_upload {
+  width: 40%;
+}
+
+/* line 35, ../sass/base/_inherited.scss */
+.main_wrapper .wrapper2 section.login_info input[type="text"], .main_wrapper .wrapper2 section.persn_info input[type="text"], .main_wrapper .wrapper2 section.login_info input[type="email"], .main_wrapper .wrapper2 section.login_info input[type="password"] {
+  padding: 7px 9px;
+  width: 50%;
+  margin: 5px 0 5px 0;
+  border:1px solid gray;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  font-weight: 400;
+  text-transform: none;
+  font-family: 'Lora',serif;
+  
+}
+
+/* line 46, ../sass/base/_inherited.scss */
+.wrapper2 .form_submit input[type="button"], .wrapper2 .form_submit input[type="submit"] {
+  border: 1px solid grey;
+  border-width: thin;
+  box-shadow: 1px 1px #e1e1e1;
+  float: right;
+  padding: 8px;
+  margin: 5px 7px 2px auto;
+  text-decoration: none;
+  display: block;
+  font-family: "SegoeUI SemiBold";
+  border-radius: 3px;
+}
+
+/* line 62, ../sass/base/_inherited.scss */
+.wrapper2 .form_submit input[type="button"]:hover, .wrapper2 .form_submit input[type="submit"]:hover {
+  background-color: #209982;
+  color: #e1e1e1;
+}
+
+/* line 72, ../sass/base/_inherited.scss */
+.main_wrapper .wrapper1 input[type="file"], .Greetings input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+/* line 85, ../sass/base/_inherited.scss */
+.main_wrapper .wrapper1 .user_submit, .Greetings .user_greetings {
+ 
+  background-color: gainsboro;
+  display:inline-block;
+  text-align: center;
+  -webkit-appearance:button;
+  -moz-appearance:button;
+   box-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  -ms-appearance:button;
+    
+}
+
+/* line 103, ../sass/base/_inherited.scss */
+.main_wrapper .wrapper1 .user_submit:hover, .Greetings .user_greetings:hover {
+  background-color: #209982;
+  border: 1px solid black;
+}
+
+/* line 7, ../sass/modules/_module.scss */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  font-family: 'Slabo 27px',serif;
+}
+/* line 14, ../sass/modules/_module.scss */
+body .Header {
+  height: 60px;
+  color: #f0f0f0;
+  background-color: #3c3c3c;
+  border-bottom: 1px solid #0eb0ff;
+  border-width: thick;
+}
+/* line 23, ../sass/modules/_module.scss */
+body nav {
+  display: inline-block;
+  float: right;
+  padding: 0.75%;
+  margin-right: 10%;
+}
+/* line 30, ../sass/modules/_module.scss */
+body nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 42, ../sass/modules/_module.scss */
+body nav li {
+  float: left;
+  text-align: center;
+}
+/* line 47, ../sass/modules/_module.scss */
+body nav .img_user {
+  height: 35px;
+  width: 35px;
+  border: 1px solid white;
+  border-width: thin;
+  border-radius: 4px;
+}
+/* line 56, ../sass/modules/_module.scss */
+body nav .username {
+  padding: 0px 30px 8px 5px;
+  border-right: 0.3px solid black;
+  border-color: grey;
+  border-width: thin;
+}
+/* line 67, ../sass/modules/_module.scss */
+body nav li.username p {
+  margin: 8px 0px 0px 5px;
+  text-shadow: 2px 2px black;
+}
+/* line 74, ../sass/modules/_module.scss */
+body nav ul.sprite {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 81, ../sass/modules/_module.scss */
+body nav ul.sprite li {
+  float: left;
+  text-align: center;
+  padding: 5px 5px 5px 7px;
+  text-shadow: 1px 1px white;
+}
+/* line 90, ../sass/modules/_module.scss */
+body nav ul.sprite a {
+  text-decoration: none;
+}
+
+/* line 103, ../sass/modules/_module.scss */
+.main_wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+/* line 108, ../sass/modules/_module.scss */
+.main_wrapper .content_header > p {
+  font-size: 175%;
+  text-shadow: 1px 1px #e1e1e1;
+  margin: 0px 0px 10px 0px;
+  padding: 18px 0 8px 0;
+}
+/* line 125, ../sass/modules/_module.scss */
+.main_wrapper .user_form span {
+  width: 30%;
+  display: inline-block;
+  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.12);
+  margin: 0;
+  font-family: 'Lora',serif;
+  font-size: 90%;
+}
+
+/* line 139, ../sass/modules/_module.scss */
+.main_wrapper .wrapper1 {
+  float: left;
+  width: 30%;
+  height: 250px;
+}
+/* line 145, ../sass/modules/_module.scss */
+.main_wrapper .wrapper1 > article {
+  background-color: #dddddd;
+  width: 50%;
+  height: 50%;
+  margin: 0px auto 0px 0px;
+}
+/* line 154, ../sass/modules/_module.scss */
+.main_wrapper .wrapper1 > p {
+  margin: 8px 0 4px 0;
+  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.4);
+  font-size: 90%;
+  padding: 2px;
+}
+/* line 165, ../sass/modules/_module.scss */
+.main_wrapper .wrapper1 .user_input {
+  padding: 5px;
+  width: 55%;
+  margin-top: 5px;
+  font-family: 'Slabo 27px',serif;
+}
+/* line 173, ../sass/modules/_module.scss */
+.main_wrapper .wrapper1 .user_submit {
+  margin-left: 10px;
+  padding: 5px;
+}
+/* line 186, ../sass/modules/_module.scss */
+.main_wrapper .wrapper1 .user_upload {
+  padding: 7px;
+  margin: 10px 0 0 0;
+  display: block;
+}
+
+/* line 201, ../sass/modules/_module.scss */
+.main_wrapper .wrapper2 {
+  float: right;
+  width: 70%;
+  padding-left: 30px;
+}
+/* line 207, ../sass/modules/_module.scss */
+.main_wrapper .wrapper2 section.login_info, .main_wrapper .wrapper2 section.persn_info {
+  margin-bottom: 20px;
+}
+
+/* line 222, ../sass/modules/_module.scss */
+.wrapper2 section.Greetings {
+  margin-bottom: 20px;
+}
+/* line 226, ../sass/modules/_module.scss */
+.wrapper2 section.Greetings input[type="text"] {
+  padding: 5px 0 4px 4px;
+  width: 40%;
+  margin: 5px 5px 5px 0;
+}
+/* line 232, ../sass/modules/_module.scss */
+.wrapper2 section.Greetings input[type="button"] {
+  padding: 5px 0 4px 4px;
+  width: 20%;
+  margin: 5px 5px 5px 0;
+}
+/* line 237, ../sass/modules/_module.scss */
+.wrapper2 section.Greetings .greetings {
+  text-align: center;
+  height: 130px;
+  width: 400px;
+  border: 1px solid grey;
+  border-width: thin;
+  margin-left: 120px;
+  margin-top: 20px;
+  padding: 8.5%;
+}
+/* line 249, ../sass/modules/_module.scss */
+.wrapper2 section.Greetings .text-comp {
+  display: inline;
+  color: forestgreen;
+  padding-left: 22%;
+}
+/* line 256, ../sass/modules/_module.scss */
+.wrapper2 .form_submit {
+  background-color: #e1e1e1;
+  margin: 0 auto 20px -320px;
+  height: 45px;
+  width: 960px;
+}
+
+/* line 289, ../sass/modules/_module.scss */
+.Greetings .user_greetings {
+  padding: 3px 10px 3px 10px;
+}
+
+.login_info > p , .persn_info > p , .greetings > p {
+    
+    font-size: 120%;
+}
+
+
+/* ---------------------- Asterik Mark ---------------------- */
+.main_wrapper .user_form span sup {
+  color:red;
+  font-weight:bold;
+  
+}
+
+/* -------------------------- For Validation placeholder --------- */
+
+.red_alert {
+
+  border:1px solid #e84545;
+  border-width: thin;
+  box-shadow: none;
+}
+
+/* ----------------- For chrome ------------- */
+ .red_alert::-webkit-input-placeholder {
+color: #BE4B49 !important;
+background:url('../images/caution2.png') right no-repeat ;
+line-height: 1.8em;
+font-weight: 480;
+letter-spacing: 0.4px;
+}
+
+/*---------------- For Mozilla---------------*/
+.red_alert::-moz-input-placeholder {
+color: #BE4B49 !important;
+background:url('../images/caution2.png') right no-repeat ;
+line-height: 1.8em;
+font-weight: 480;
+letter-spacing: 0.4px;
+}
+
+/* ----------- For IE ----------------- */
+.red_alert:-ms-input-placeholder {
+
+  color: #BE4B49 !important;
+  background: transparent url('../images/caution2.png') right no-repeat ;
+  line-height: 1.8em;
+  font-weight: 480;
+  letter-spacing: 0.4px;
+  
+}
+.alert_section {
+
+  background-color: #e84545;
+  color:white;
+  box-shadow: 4px 4px 8px 4px #3c3c3c;
+
+}
+
+#confirm_message {
+
+    display: inline-block;
+    font-size: 11px;
+    padding-left: 195px;
+    color: #c51414;
+    font-weight: 600;
+    visibility: hidden;
+
+  }
+
+/* -------------------- Dialog Style ----------------------------- */
+
+
+  #Form_output {  
+    max-width: 700px;
+    width: 90%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition:ease 0.25s all;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 6px rgba(0,0,0,1);
+    border-radius: 3px;
+    background: #3c3c3c;
+    color: white;
+}  
+
+#Form_output p {
+
+   margin: 0;
+    background-color: rgba(255,255,255,0.9);
+    padding: 7px;
+    color: rgba(0,0,0,0.8);
+    text-align: justify;  
+    width:60%;
+    margin:1px auto;
+    box-shadow: 2px 2px 8px rgba(255,255,255,0.8);
+
+}
+
+#Form_output #exit {
+
+  padding:8px;
+  background-color:#BE4B49;
+  color: black;
+  margin: 15px auto 0 auto;
+  display: block;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  box-shadow: 2px 2px 5px rgba(255,255,255,0.6);
+}
+
+#Form_output #exit:focus {
+
+  outline:0;
+}
+
+footer {
+
+   background-color:#3c3c3c;
+    height:35px;
+}

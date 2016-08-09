@@ -1,0 +1,353 @@
+jQuery(document).ready(function() {     /* Doing everything after Document is ready() i.e Everything is loaded */
+
+	var username;
+	var email;
+	var Password;
+	var C_password;
+	var lastname;
+	var firstname;
+	var location;
+	var about;
+	var acc_level;
+	
+
+    jQuery("#submit_form").click(function() {
+	
+		/*-- Fetching the values */
+		username = jQuery("#Username").val();
+		email = jQuery("#Email").val();
+		Password = jQuery("#Password").val();
+		C_password = jQuery("#Confirm").val();
+		firstname = jQuery("#FirstName").val();
+		empid = jQuery("#EmployeeID").val();
+		lastname =jQuery("#LastName").val();
+        location = jQuery("#Location").val();
+        about = jQuery("#About").val();
+        acc_level = jQuery('input[name="a_level"]:checked').val();
+
+		
+		if(Perform_validation()) {
+
+				/* If all inputs validates submit the form ---- */
+				var html = "<p><span>UserName: "+username+"</span></p>"+
+						"<p><span>EmailID: "+email+"</span></p>"+
+						"<p><span>Password: "+Password+"</span></p>"+
+						"<p><span>Access Level: "+acc_level+"</span></p>"+
+						"<p><span>EmployeeID: "+empid+"</span></p>"+
+						"<p><span>FirstName: "+firstname+"</span></p>"+
+						"<p><span>LastName: "+lastname+"</span></p>"+
+						"<p><span>Location: "+location+"</span></p>"+
+						"<p><span>About: "+about+"</span></p>"+
+						"<button id='exit'>Close" ;
+
+                    /* displaying dialog */
+				    var dialog = document.getElementById('Form_output'); 
+				    jQuery("#Form_output").html(html);
+                    jQuery("#Form_output").attr("style"," ");
+                    jQuery("#Form_output").css("visibility","visible");
+				    document.getElementById('exit').onclick = function() {   
+                        jQuery("#Form_output").css("visibility","hidden");
+				    }; 
+
+				//jQuery("#user_form").submit();
+		}
+		else
+		{
+			
+           
+		}
+
+		/*-- Function to perform validation --*/
+
+		function Perform_validation() {
+		
+		var IsUserNameValid = validate_username(username);
+		var IsEmailValid = validate_email(email);
+		var IsPasswordValid = validate_password(Password,C_password);
+		var IsPassCnPassSame = false;
+		var IsFirstNameValid = validate_firstname(firstname);
+		var IsEmployeeidValid = validate_employeeid(empid);
+		var IsLastNameisValid = validate_lastname(lastname);
+		var IsLocationisValid = validate_location(location);
+		var IsAboutisValid = validate_about(about);
+
+		
+		if(IsPasswordValid.first && IsPasswordValid.second ) {
+
+			if(Password === C_password) {
+
+				IsPassCnPassSame = true; // if both password matches then procceed
+
+				jQuery("#confirm_message").css("visibility","hidden");
+			} else {
+
+				jQuery("#confirm_message").css("visibility","visible");
+			}
+		}
+
+
+		if(IsUserNameValid && IsEmailValid && IsPassCnPassSame && IsEmployeeidValid && IsFirstNameValid && IsLastNameisValid && IsLocationisValid && IsAboutisValid) {
+		 return true;
+		} else {
+		 	return false;
+		 }
+		
+		}
+
+		/* function to validate username */
+
+		function validate_username(username) {
+
+			
+			if(username === undefined || username === "") {
+
+			 jQuery("#Username").addClass("red_alert");
+			 jQuery("#Username").attr("placeholder","Username can not be empty").val("").focus().blur("");
+			
+			 return false;
+			}
+			else {
+
+				var Re_username = /^[a-zA-Z0-9_-]{6,10}$/;
+				
+				if(Re_username.test(username)) {
+
+					return true;
+				} else {
+
+					jQuery("#Username").addClass("red_alert");
+			 		jQuery("#Username").attr("placeholder","Invalid Username").val("").focus().blur("");
+					return false;}
+
+				}
+				
+			}
+
+			/* Function to validate email id */
+			function validate_email(email) {
+
+				if(email === undefined || email === "") {
+
+				jQuery("#Email").addClass("red_alert");
+			    jQuery("#Email").attr("placeholder","Email can not be empty").val("").focus().blur("");
+			    return false;
+
+			} else {
+
+				var Re_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
+				if(Re_email.test(email)) {
+
+					return true;
+				} else {
+
+					jQuery("#Email").addClass("red_alert");
+			    	jQuery("#Email").attr("placeholder","Invalid Email Address").val("").focus().blur("");
+			    	return false;
+				}
+			}
+		}
+		
+		/* function to validate password */
+
+		function validate_password(Password,C_password) {
+
+			var b_array = {};
+
+			if(Password === undefined || Password === "") {
+
+				jQuery("#Password").addClass("red_alert");
+			    jQuery("#Password").attr("placeholder","Password can not be empty").val("").focus().blur("");
+			    b_array.first = false;
+
+			} else {
+
+				var Re_password = /^[A-Za-z0-9!@#$%^&*()_]{8,20}$/;
+
+				if(Re_password.test(Password)) {
+
+					b_array.first = true;
+				} else {
+
+					jQuery("#Password").addClass("red_alert");
+			    	jQuery("#Password").attr("placeholder","Invalid Password").val("").focus().blur("");
+			    	b_array.first = false;
+				}
+
+		}
+
+		if(C_password === undefined || C_password === "") {
+
+				jQuery("#Confirm").addClass("red_alert");
+			    jQuery("#Confirm").attr("placeholder","Password can not be empty").val("").focus().blur("");
+			    b_array.second = false;
+
+			} else {
+
+				
+				var Re_password1 = /^[A-Za-z0-9!@#$%^&*()_]{8,20}$/;
+
+				if(Re_password1.test(C_password)) {
+
+					b_array.second = true;
+				} else {
+
+					jQuery("#Confirm").addClass("red_alert");
+			    	jQuery("#Confirm").attr("placeholder","Invalid Password").val("").focus().blur("");
+			    	b_array.second = false;
+				}
+
+		}
+
+		
+		return b_array;
+
+	}
+
+
+	/* Verifying FirstName and Employee id */
+
+		function validate_firstname(firstname) {
+
+			if(firstname === undefined || firstname === "") {
+				return true;
+			} else {
+
+			var Re_firstname = /^[A-Za-z]{3,8}$/;
+
+			if(Re_firstname.test(firstname)) { return true; } else {
+
+				jQuery("#FirstName").attr("placeholder","FirstName should be >3 & <8").val("").focus().blur("");
+				return false;
+				}
+			}
+		}
+
+
+		function validate_employeeid(empid) {
+
+			if(empid === undefined || empid === "") {
+
+				jQuery("#EmployeeID").addClass("red_alert");
+			    jQuery("#EmployeeID").attr("placeholder","EmployeeID can not be empty").val("").focus().blur("");
+
+			} else {
+
+				var Re_empid = /^[0-9]{6}$/;
+
+				if(Re_empid.test(empid)) {
+
+					return true;
+				} else {
+
+					jQuery("#EmployeeID").addClass("red_alert");
+			    	jQuery("#EmployeeID").attr("placeholder","Invalid EmployeeID").val("").focus().blur("");
+			    	return false;
+				}
+
+		}
+
+		}
+
+		/* Validating the LastName */
+
+		function validate_lastname(lastname) {
+
+			
+			var Re_lastname = /^[A-Za-z]*$/;
+
+			if(Re_lastname.test(lastname)) { return true; } else {
+
+				jQuery("#LastName").attr("placeholder","LastName should be in alphabatic").val("").focus().blur("");
+				return false;
+			}
+
+
+		}
+
+        /* Validating the Location */
+        
+		function validate_location(location){
+
+			
+			var Re_location = /^[A-Za-z\s]*$/;
+
+			if(Re_location.test(location)) { return true; } else {
+
+				jQuery("#Location").attr("placeholder","Location should be in alphabatic").val("").focus().blur("");
+				return false;
+			}
+
+		}
+
+        /* Validating the About */
+        
+		function validate_about(about) {
+			
+			var Re_about = /^[A-Za-z\s]*$/;
+
+			if(Re_about.test(about)) { return true; } else {
+
+				jQuery("#About").attr("placeholder","About should be in alphabatic").val("").focus().blur("");
+				return false;
+			}
+
+		}
+
+
+	/*----------------------------- End of submit event --------------------- */
+
+	});
+
+	var file_profile = document.getElementById("file-upload");
+	file_profile.onchange = function() {
+	    document.getElementById('fileid').value = file_profile.value.replace("C:\\fakepath\\","");
+	};
+
+     var file_greeting = document.getElementById("file-upload_greet");
+	file_greeting.onchange = function() {
+	    document.getElementById('f_id').value = file_greeting.value.replace("C:\\fakepath\\","");
+	}; 
+	
+    
+    /*--- Reset the Form Values -------------------------------------------------- */
+    
+    jQuery("#reset_form").click(function() { 
+    
+        jQuery("#Username").val("");
+        jQuery("#Username").removeClass("red_alert");
+        jQuery("#Username").attr("placeholder","Username");
+        jQuery("#Email").val("");
+        jQuery("#Email").removeClass("red_alert");
+        jQuery("#Email").attr("placeholder","Email");
+        jQuery("#Password").val("");
+        jQuery("#Password").removeClass("red_alert");
+        jQuery("#Password").attr("placeholder","Password");
+        jQuery("#Confirm").val("");
+        jQuery("#Confirm").removeClass("red_alert");
+        jQuery("#Confirm").attr("placeholder","Confirm Password");
+        jQuery("#FirstName").val("");
+        jQuery("#FirstName").attr("placeholder","FirstName");
+        jQuery("#LastName").val("");
+        jQuery("#LastName").attr("placeholder","LastName");
+        jQuery("#EmployeeID").val("");
+        jQuery("#EmployeeID").removeClass("red_alert");
+        jQuery("#EmployeeID").attr("placeholder","EmployeeID");
+        jQuery("#Location").val("");
+        jQuery("#Location").attr("placeholder","Location");
+        jQuery("#About").val("");
+        jQuery("#About").attr("placeholder","About");
+        jQuery('input[name="a_level"]').prop('checked', false);
+        jQuery("#confirm_message").css("visibility","hidden");
+        jQuery("#fileid").val("");
+        jQuery("#f_id").val("");
+    
+    });
+    
+    
+    
+    
+    /* -------------- End of Reset Form button function ------------------*/
+
+ });
+
