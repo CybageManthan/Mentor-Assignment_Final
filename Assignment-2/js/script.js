@@ -1,4 +1,9 @@
-jQuery(document).ready(function() {     /* Doing everything after Document is ready() i.e Everything is loaded */
+(function(global){ 
+
+var formObject = {}; /*Create an object which will use outside of the function*/
+
+
+function validateData() {
 
 	var username;
 	var email;
@@ -10,6 +15,10 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 	var about;
 	var acc_level;
 	
+
+	/* document.querySelctor("submit_form").addEventListner("click",function() { }); */
+
+									/* 	OR 	*/
 
     jQuery("#submit_form").click(function() {
 	
@@ -40,16 +49,17 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 						"<p><span>About: "+about+"</span></p>"+
 						"<button id='exit'>Close" ;
 
-                    /* displaying dialog */
-				    var dialog = document.getElementById('Form_output'); 
-				    jQuery("#Form_output").html(html);
-                    jQuery("#Form_output").attr("style"," ");
-                    jQuery("#Form_output").css("visibility","visible");
-				    document.getElementById('exit').onclick = function() {   
-                        jQuery("#Form_output").css("visibility","hidden");
+	                    /* displaying dialog */
+					    var dialog = document.getElementById('Form_output'); 
+					    jQuery("#Form_output").html(html);
+	                    jQuery("#Form_output").attr("style"," ");
+	                    jQuery("#Form_output").css("visibility","visible");
+					    document.getElementById('exit').onclick = function() {   
+	                    jQuery("#Form_output").css("visibility","hidden");
+					    
 				    }; 
 
-				//jQuery("#user_form").submit();
+				//jQuery(".user_form").submit();
 		}
 		else
 		{
@@ -67,10 +77,13 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 		var IsPassCnPassSame = false;
 		var IsFirstNameValid = validate_firstname(firstname);
 		var IsEmployeeidValid = validate_employeeid(empid);
-		var IsLastNameisValid = validate_lastname(lastname);
+		
+		/* Uncomment this code if you want to validate the other 3 parameters*/
+
+		/*var IsLastNameisValid = validate_lastname(lastname);
 		var IsLocationisValid = validate_location(location);
 		var IsAboutisValid = validate_about(about);
-
+*/
 		
 		if(IsPasswordValid.first && IsPasswordValid.second ) {
 
@@ -86,11 +99,13 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 		}
 
 
-		if(IsUserNameValid && IsEmailValid && IsPassCnPassSame && IsEmployeeidValid && IsFirstNameValid && IsLastNameisValid && IsLocationisValid && IsAboutisValid) {
+		return IsUserNameValid && IsEmailValid && IsPassCnPassSame && IsEmployeeidValid && IsFirstNameValid;
+
+		/*if(IsUserNameValid && IsEmailValid && IsPassCnPassSame && IsEmployeeidValid && IsFirstNameValid) {
 		 return true;
 		} else {
 		 	return false;
-		 }
+		 }*/
 		
 		}
 
@@ -134,7 +149,7 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 			} else {
 
-				var Re_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+				var Re_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([\w]{2,6}(?:\.[\w]{2})?)$/i;
 
 				if(Re_email.test(email)) {
 
@@ -210,12 +225,13 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 		function validate_firstname(firstname) {
 
 			if(firstname === undefined || firstname === "") {
+				
 				return true;
-			} else {
+				} else {
 
-			var Re_firstname = /^[A-Za-z]{3,8}$/;
+				var Re_firstname = /^[A-Za-z]{3,8}$/;
 
-			if(Re_firstname.test(firstname)) { return true; } else {
+				if(Re_firstname.test(firstname)) { return true; } else {
 
 				jQuery("#FirstName").attr("placeholder","FirstName should be >3 & <8").val("").focus().blur("");
 				return false;
@@ -235,9 +251,10 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 				var Re_empid = /^[0-9]{5}$/;
 
-				if(Re_empid.test(empid)) {
+				if(Re_empid.test(empid)) { 
 
 					return true;
+				
 				} else {
 
 					jQuery("#EmployeeID").addClass("red_alert");
@@ -251,7 +268,7 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 		/* Validating the LastName */
 
-		function validate_lastname(lastname) {
+		/*function validate_lastname(lastname) {
 
 			
 			var Re_lastname = /^[A-Za-z]*$/;
@@ -264,10 +281,10 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 
 		}
-
+	*/
         /* Validating the Location */
         
-		function validate_location(location){
+/*		function validate_location(location){
 
 			
 			var Re_location = /^[A-Za-z\s]*$/;
@@ -280,7 +297,7 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 		}
 
-        /* Validating the About */
+         Validating the About 
         
 		function validate_about(about) {
 			
@@ -293,7 +310,7 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 			}
 
 		}
-
+*/
 
 	/*----------------------------- End of submit event --------------------- */
 
@@ -301,12 +318,12 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 	var file_profile = document.getElementById("file-upload");
 	file_profile.onchange = function() {
-	    document.getElementById('fileid').value = file_profile.value.replace("C:\\fakepath\\","");
+	    document.getElementById('file-picture').value = file_profile.value.replace("C:\\fakepath\\","");
 	};
 
      var file_greeting = document.getElementById("file-upload_greet");
 	file_greeting.onchange = function() {
-	    document.getElementById('f_id').value = file_greeting.value.replace("C:\\fakepath\\","");
+	    document.getElementById('file-greetings').value = file_greeting.value.replace("C:\\fakepath\\","");
 	}; 
 	
     
@@ -339,15 +356,30 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
         jQuery("#About").attr("placeholder","About");
         jQuery('input[name="a_level"]').prop('checked', false);
         jQuery("#confirm_message").css("visibility","hidden");
-        jQuery("#fileid").val("");
-        jQuery("#f_id").val("");
+        jQuery("#file-picture").val("");
+        jQuery("#file-greetings").val("");
     
     });
     
-    
-    
-    
     /* -------------- End of Reset Form button function ------------------*/
 
- });
+};
 
+
+function validateForm() {
+
+	/* Doing everything after Document is ready() i.e Everything is loaded */
+
+	jQuery(document).ready(validateData);
+
+};
+    
+formObject.validateFormData = validateForm; /*Attaching a property to the formObject*/
+
+global.$formObject = formObject; /*exposing the object*/
+
+})(window);
+
+
+/*Calling the function to perform validation of the form data. */
+$formObject.validateFormData();

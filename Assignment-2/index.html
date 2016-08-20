@@ -4,8 +4,6 @@
     	<meta charset="utf-8">
     	<title>Assignment-1</title>
     	<link rel="stylesheet" href="css/main.css">
-    	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-    	
     </head>
     <body>
     <header class="Header">
@@ -15,9 +13,9 @@
     			<li class="username"><p>Manthan</p></li>
     			<li>
     				<ul class="sprite">
-    					<li><a href="#" ><img src="images/question.png" height="25px" width="25px" /> </a></li> 
-    					<li><a href="#" ><img src="images/settings.png" height="25px" width="25px" /> </a></li> 
-    					<li><a href="#" ><img src="images/shutdown.png" height="25px" width="25px" /> </a></li> 
+    					<li><a href="" ><img src="images/question.png" height="25px" width="25px" /> </a></li> 
+    					<li><a href="" ><img src="images/settings.png" height="25px" width="25px" /> </a></li> 
+    					<li><a href="" ><img src="images/shutdown.png" height="25px" width="25px" /> </a></li> 
                     </ul>
     			</li>
     		</ul> <!-- End of ul tag -->
@@ -26,14 +24,14 @@
 
     <section class="main_wrapper">
         <section class="content_header">
-            <p >User Profile </p>
+            <p>User Profile </p>
         </section> <!-- End of .content_header class -->
     	
         <section class="wrapper1">
              <article></article>
              <p> Upload Picture </p>
              <form action="">
-                 <input type="text" id="fileid" placeholder="Upload Picture" class="user_input"/>
+                 <input type="text" id="file-picture" placeholder="Upload Picture"/>
                  <label for="file-upload" class="user_submit">
                      Browse</label>
                  <input id="file-upload" type="file"/> <br>
@@ -42,42 +40,44 @@
     	</section> <!-- End of .wrapper1 class -->
     	
         <section class="wrapper2">
-            <form id="user_form"  class="user_form">
-            <section class="login_info">
-                <p> Login Information </p>
+            <form class="user_form">
+
+            <section class="login_info"> <!-- Login_info start point -->
+                <h3> Login Information </h3>
                     
-                <span>UserName:<sup>*</sup> </span><input class="" title="Enter Username" id="Username" type="text" placeholder="Username"/><br>
-                    
-                <span>EmailID:<sup>*</sup>  </span><input type="email" placeholder="Email" id="Email"/> <br>
-                    
-                <span>Password:<sup>*</sup>  </span><input type="password" title="Alphanumeric and Special Characters(!@#$%^&*()) allowed" placeholder="Password" id="Password" /><br>
-                    
-                 <span>Confirm Password:<sup>*</sup>  </span><input type="password" id="Confirm" placeholder="Confirm Password"/><i id="confirm_message"> Password and Confirm password should be same </i> <br>
-                    
-                <span>Access Level :</span><input type="radio" style="margin-top:10px;" name="a_level" value="Admin" /> Admin 
+                    <label>UserName:<sup>*</sup> </label><input class="" title="Enter Username" id="Username" type="text" placeholder="Username"/><br>
+                        
+                    <label>EmailID:<sup>*</sup></label><input type="email" placeholder="Email" id="Email"/> <br>
+                        
+                    <label>Password:<sup>*</sup>  </label><input type="password" title="Alphanumeric and Special Characters(!@#$%^&*()) allowed" placeholder="Password" id="Password" /><br>
+                        
+                     <label>Confirm Password:<sup>*</sup>  </label><input type="password" id="Confirm" placeholder="Confirm Password"/><i id="confirm_message"> Password and Confirm password should be same </i> <br>
+                        
+                    <label>Access Level :</label>
+                    <input type="radio" name="a_level" value="Admin" />Admin
                     <input type="radio" name="a_level" value="User" />User<br>
                     
                 </section> <!-- End of .login_info class -->
 
-            <section class="persn_info">
+            <section class="persn_info"> <!-- Start of .persn_info class -->
                 
-                <p> Personal Information </p>
+                <h3> Personal Information </h3>
                 
-                <span>FirstName: </span><input type="text" id="FirstName" placeholder="FirstName" /> <br>
+                <label>FirstName: </label><input type="text" id="FirstName" placeholder="FirstName" /> <br>
                 
-                <span>LastName: </span><input type="text" id="LastName" placeholder="LastName"  /> <br>
+                <label>LastName: </label><input type="text" id="LastName" placeholder="LastName"  /> <br>
                 
-                <span>EmployeeID:<sup><b>*</b></sup></span><input type="text" title="Only Numbers" placeholder="EmployeeID" id="EmployeeID" /> <br>
+                <label>EmployeeID:<sup><b>*</b></sup></label><input type="text" title="Only Numbers" placeholder="EmployeeID" id="EmployeeID" /> <br>
                 
-                <span>Location:</span><input type="text" placeholder="Location" id="Location"  /> <br>
+                <label>Location:</label><input type="text" placeholder="Location" id="Location" /> <br>
                 
-                <span>About:</span><input type="text"  placeholder="About" id="About">
+                <label>About:</label><input type="text"  placeholder="About" id="About">
                 
             </section> <!-- End of persn_info class -->
 
             <section class="Greetings">
-                <p> Add New Greetings </p>
-                <span>Upload Greetings: </span><input type="text" id="f_id" placeholder="Upload Greetings" /><label for="file-upload_greet" class="user_greetings">
+                <h3> Add New Greetings </h3>
+                <label>Upload Greetings: </label><input type="text" id="file-greetings" placeholder="Upload Greetings" /><label for="file-upload_greet" id="user_greet" class="user_greetings">
                      Browse</label>
                  <input id="file-upload_greet" type="file"/> <br>
                 <span class="text-comp">(upload greetings in .jpg , .png and .pdf format only)</span> <br>
