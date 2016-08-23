@@ -117,7 +117,7 @@ function validateData() {
 			if(username === undefined || username === "") {
 
 			 jQuery("#Username").addClass("red_alert");
-			 jQuery("#Username").attr("placeholder","Username can not be empty").val("").focus().blur("");
+			 jQuery("#Username").attr("placeholder","Username can not be empty").val("");
 			
 			 return false;
 			}
@@ -131,7 +131,7 @@ function validateData() {
 				} else {
 
 					jQuery("#Username").addClass("red_alert");
-			 		jQuery("#Username").attr("placeholder","Invalid Username").val("").focus().blur("");
+			 		jQuery("#Username").attr("placeholder","Allowed: a-z,A-Z,0-9, (_-) & len(6,10)").val("");
 					return false;}
 
 				}
@@ -144,7 +144,7 @@ function validateData() {
 				if(email === undefined || email === "") {
 
 				jQuery("#Email").addClass("red_alert");
-			    jQuery("#Email").attr("placeholder","Email can not be empty").val("").focus().blur("");
+			    jQuery("#Email").attr("placeholder","Email can not be empty").val("");
 			    return false;
 
 			} else {
@@ -157,7 +157,7 @@ function validateData() {
 				} else {
 
 					jQuery("#Email").addClass("red_alert");
-			    	jQuery("#Email").attr("placeholder","Invalid Email Address").val("").focus().blur("");
+			    	jQuery("#Email").attr("placeholder","Invalid Email Address").val("");
 			    	return false;
 				}
 			}
@@ -172,7 +172,7 @@ function validateData() {
 			if(Password === undefined || Password === "") {
 
 				jQuery("#Password").addClass("red_alert");
-			    jQuery("#Password").attr("placeholder","Password can not be empty").val("").focus().blur("");
+			    jQuery("#Password").attr("placeholder","Password can not be empty").val("");
 			    b_array.first = false;
 
 			} else {
@@ -185,7 +185,7 @@ function validateData() {
 				} else {
 
 					jQuery("#Password").addClass("red_alert");
-			    	jQuery("#Password").attr("placeholder","Invalid Password").val("").focus().blur("");
+			    	jQuery("#Password").attr("placeholder","Allowed: a-z,A-Z ,0-9, (!@#$%^&*()) ").val("");
 			    	b_array.first = false;
 				}
 
@@ -194,7 +194,7 @@ function validateData() {
 		if(C_password === undefined || C_password === "") {
 
 				jQuery("#Confirm").addClass("red_alert");
-			    jQuery("#Confirm").attr("placeholder","Password can not be empty").val("").focus().blur("");
+			    jQuery("#Confirm").attr("placeholder","Password can not be empty").val("");
 			    b_array.second = false;
 
 			} else {
@@ -208,7 +208,7 @@ function validateData() {
 				} else {
 
 					jQuery("#Confirm").addClass("red_alert");
-			    	jQuery("#Confirm").attr("placeholder","Invalid Password").val("").focus().blur("");
+			    	jQuery("#Confirm").attr("placeholder","Allowed: a-z,A-Z,0-9, (!@#$%^&*())").val("");
 			    	b_array.second = false;
 				}
 
@@ -233,7 +233,7 @@ function validateData() {
 
 				if(Re_firstname.test(firstname)) { return true; } else {
 
-				jQuery("#FirstName").attr("placeholder","FirstName should be >3 & <8").val("").focus().blur("");
+				jQuery("#FirstName").attr("placeholder","FirstName should be >3 & <8").val("");
 				return false;
 				}
 			}
@@ -245,7 +245,7 @@ function validateData() {
 			if(empid === undefined || empid === "") {
 
 				jQuery("#EmployeeID").addClass("red_alert");
-			    jQuery("#EmployeeID").attr("placeholder","EmployeeID can not be empty").val("").focus().blur("");
+			    jQuery("#EmployeeID").attr("placeholder","EmployeeID can not be empty").val("");
 
 			} else {
 
@@ -258,14 +258,15 @@ function validateData() {
 				} else {
 
 					jQuery("#EmployeeID").addClass("red_alert");
-			    	jQuery("#EmployeeID").attr("placeholder","Invalid EmployeeID").val("").focus().blur("");
+			    	jQuery("#EmployeeID").attr("placeholder","Allowed: 0-9 & len=5").val("");
 			    	return false;
 				}
 
 		}
 
 		}
-
+        
+        
 		/* Validating the LastName */
 
 		/*function validate_lastname(lastname) {
@@ -275,7 +276,7 @@ function validateData() {
 
 			if(Re_lastname.test(lastname)) { return true; } else {
 
-				jQuery("#LastName").attr("placeholder","LastName should be in alphabatic").val("").focus().blur("");
+				jQuery("#LastName").attr("placeholder","LastName should be in alphabatic").val("");
 				return false;
 			}
 
@@ -291,7 +292,7 @@ function validateData() {
 
 			if(Re_location.test(location)) { return true; } else {
 
-				jQuery("#Location").attr("placeholder","Location should be in alphabatic").val("").focus().blur("");
+				jQuery("#Location").attr("placeholder","Location should be in alphabatic").val("");
 				return false;
 			}
 
@@ -305,7 +306,7 @@ function validateData() {
 
 			if(Re_about.test(about)) { return true; } else {
 
-				jQuery("#About").attr("placeholder","About should be in alphabatic").val("").focus().blur("");
+				jQuery("#About").attr("placeholder","About should be in alphabatic").val("");
 				return false;
 			}
 
@@ -383,3 +384,38 @@ global.$formObject = formObject; /*exposing the object*/
 
 /*Calling the function to perform validation of the form data. */
 $formObject.validateFormData();
+
+/* ---------------------------- extra ---------------------- */
+
+  /*          var xOffset = 10;
+        var yOffset = 20;
+
+        $("#Username").focus(function(e) {
+            this.t = this.title;
+            this.title = "";
+            $("body").append("<span id='tooltip'>" + this.t + "</span>");
+            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px").fadeIn("fast"); 
+        });
+
+        $("input").blur(function(e) {
+            this.title = this.t;
+            $("#tooltip").remove();
+
+            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px");   
+        });   
+    
+        $("#Email").focus(function(e) {
+            this.t = this.title;
+            this.title = "";
+            $("body").append("<span id='tooltip'>" + this.t + "</span>");
+            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px").fadeIn("fast"); 
+        });
+       
+        $("#Password").focus(function(e) {
+            this.t = this.title;
+            this.title = "";
+            $("body").append("<span id='tooltip'>" + this.t + "</span>");
+            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px").fadeIn("fast"); 
+        });
+            
+      */

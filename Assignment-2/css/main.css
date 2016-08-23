@@ -405,3 +405,14 @@ footer {
    background-color:#3c3c3c;
     height:35px;
 }
+
+/*#tooltip{
+  position:absolute;
+  border:1px solid #333;
+  background:#f7f5d1;
+  padding:2px 5px;
+  color:#333;
+  display:none;
+   top: 22%;
+   left: 53%;
+  } */
