@@ -199,7 +199,7 @@ body nav ul.sprite a {
   height: 250px;
 }
 /* line 145, ../sass/modules/_module.scss */
-.main_wrapper .wrapper1 > article {
+.main_wrapper .wrapper1 > div {
   background-color: #dddddd;
   width: 50%;
   height: 50%;
@@ -284,9 +284,9 @@ body nav ul.sprite a {
 
 .login_info > h3 , .persn_info > h3 , .Greetings > h3 {
     
-    font-size: 120%;
-    font-weight: normal;
-    margin:10px 0 10px 0;
+      font-size: 120%;
+      font-weight: normal;
+      margin:10px 0 10px 0;
 }
 
 
@@ -299,12 +299,7 @@ body nav ul.sprite a {
 
 /* -------------------------- For Validation placeholder --------- */
 
-.red_alert {
 
-  border:1px solid #e84545;
-  border-width: thin;
-  box-shadow: none;
-}
 
 /* ----------------- For chrome ------------- */
  .red_alert::-webkit-input-placeholder {
@@ -332,13 +327,7 @@ letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   
 }
-.alert_section {
 
-  background-color: #e84545;
-  color:white;
-  box-shadow: 4px 4px 8px 4px #3c3c3c;
-
-}
 
 #confirm_message {
 
@@ -406,13 +395,15 @@ footer {
     height:35px;
 }
 
-/*#tooltip{
-  position:absolute;
-  border:1px solid #333;
-  background:#f7f5d1;
-  padding:2px 5px;
-  color:#333;
-  display:none;
-   top: 22%;
-   left: 53%;
-  } */
+#tooltip{
+    position:absolute;
+    border:1px solid #333;
+    background:#3c3c3c;
+    border-top-right-radius:12px;
+    border-bottom-left-radius:12px;
+    padding:10px;
+    color:rgba(255,255,255,0.8);
+    display:none;
+    top: 20%;
+    left: 52.5%;
+  } 

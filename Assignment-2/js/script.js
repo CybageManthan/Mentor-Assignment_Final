@@ -387,21 +387,21 @@ $formObject.validateFormData();
 
 /* ---------------------------- extra ---------------------- */
 
-  /*          var xOffset = 10;
+        var xOffset = 10;
         var yOffset = 20;
 
         $("#Username").focus(function(e) {
             this.t = this.title;
             this.title = "";
             $("body").append("<span id='tooltip'>" + this.t + "</span>");
-            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px").fadeIn("fast"); 
+            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px").fadeIn("slow"); 
         });
 
         $("input").blur(function(e) {
             this.title = this.t;
             $("#tooltip").remove();
 
-            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px");   
+            /*$("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px");   */
         });   
     
         $("#Email").focus(function(e) {
@@ -418,4 +418,4 @@ $formObject.validateFormData();
             $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px").fadeIn("fast"); 
         });
             
-      */
+      

@@ -9,7 +9,7 @@ body {
  	margin: 0;
  	padding: 0;
  	background-color: #f0f0f0;
-    font-family: 'Slabo 27px',serif;
+    font-family: 'calibri',serif;
  
   .Header {
 
@@ -98,6 +98,12 @@ body {
 		}
 
 	}
+
+	footer {
+
+	   	background-color:#3c3c3c;
+	    height:35px;
+	}
 }
 
 .main_wrapper {
@@ -122,11 +128,16 @@ body {
 
 	.user_form 
 	{
-		span {
-  
+		label {
 				  width: 30%;
 				  display: inline-block;
 				  margin: 0;
+
+				  sup {
+						  color:red;
+						  font-weight:bold;
+				  }
+
 			 }
 	}
 }
@@ -142,7 +153,7 @@ body {
 	width:30%;
 	height: 250px;
 	
-	> article 
+	> div 
 	{
 
 		background-color: #dddddd;
@@ -155,19 +166,18 @@ body {
 	{
 
 		margin:8px 0 4px 0;
-		text-shadow: 1px 1px grey;
 		font-size:90%;
 		padding:2px;
 	    @extend %common_border;
 	
     }
 	
-	.user_input {
+	#file-picture {
 
 	padding: 5px;
 	width: 55%;
 	margin-top:5px;
-    font-family: 'Slabo 27px',serif;
+    font-family: 'calibri',serif;
     }
 
     .user_submit 
@@ -175,7 +185,7 @@ body {
         @extend %common_wrapper1;
         @extend %common_styleinputlabel;
         margin-left: 10px;
-        padding:5px;
+        padding:7px 5px;
     }
     
     .user_submit:hover {
@@ -204,13 +214,28 @@ body {
 	width:70%;
 	padding-left: 30px;
 	
-	section.login_info ,section.persn_info 
+	.login_info , .persn_info 
 	{
     	margin-bottom: 20px;
 	}
-    
 
-	section.login_info input[type="text"] ,section.persn_info input[type="text"] ,section.login_info input[type="email"],section.login_info input[type="password"] 
+	.login_info > h3 , .persn_info > h3 {
+
+		@extend %common_h3_header_style;
+	}
+    
+    #confirm_message {
+
+    display: inline-block;
+    font-size: 11px;
+    padding-left: 195px;
+    color: #c51414;
+    font-weight: 600;
+    visibility: hidden;
+
+   }
+
+	.login_info input[type="text"] , .persn_info input[type="text"] , .login_info input[type="email"], .login_info input[type="password"] 
 	{
 	  @extend %common_input;
 	}
@@ -227,11 +252,6 @@ body {
     {
       
       @include Greetingsinputbutton(40%);  
-    }
-    
-    input[type="button"] {
-      
-      @include Greetingsinputbutton(20%);
     }
     
     .greetings {
@@ -260,20 +280,14 @@ body {
     height:45px; 
     width:960px;
   
-   input[type="button"] {
-    @extend %common_formsubmitbuttons;
+	   button[type="button"] {
+	    @extend %common_formsubmitbuttons;
+	    }
+	    
+	    button[type="button"]:hover {
+	      @extend %common_formsubmitbuttonsOnHover;
     }
-    
-    input[type="submit"] {
-    @extend %common_formsubmitbuttons;
-    }
-    
-     input[type="button"]:hover {
-      @extend %common_formsubmitbuttonsOnHover;
-    }
-     input[type="submit"]:hover {
-    
-    @extend %common_formsubmitbuttonsOnHover;
+     
   }
 }
   
@@ -296,6 +310,11 @@ body {
         
         @extend %common_hoverstyle;
         }
+
+        > h3 {
+
+        	@extend %common_h3_header_style;
+        }
     
     }
 
@@ -304,3 +323,76 @@ body:after {
   @extend %common_afterproperty;
 }
 
+/* ----------------- For chrome ------------- */
+.red_alert::-webkit-input-placeholder {
+color: #BE4B49 !important;
+background:url('../images/caution2.PNG') right no-repeat ;
+line-height: 1.8em;
+font-weight: 480;
+letter-spacing: 0.4px;
+}
+
+/*---------------- For Mozilla---------------*/
+.red_alert::-moz-placeholder {
+color: #D51818 !important;
+line-height: 1.2em;
+font-weight: 480;
+letter-spacing: 0.4px;
+}
+
+/* ----------- For IE ----------------- */
+.red_alert:-ms-input-placeholder {
+
+  color: #BE4B49 !important;
+  line-height: 1.2em;
+  font-weight: 480;
+  letter-spacing: 0.4px;
+  
+}
+
+#Form_output {  
+    max-width: 700px;
+    width: 90%;
+    padding: 40px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transition:ease 0.25s all;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 6px rgba(0,0,0,1);
+    border-radius: 3px;
+    background: #3c3c3c;
+    color: white;
+
+    p {
+
+    		margin: 0;
+		    background-color: rgba(255,255,255,0.9);
+		    padding: 7px;
+		    color: rgba(0,0,0,0.8);
+		    text-align: justify;  
+		    width:60%;
+		    margin:1px auto;
+		    box-shadow: 2px 2px 8px rgba(255,255,255,0.8);
+
+    }
+
+     #exit {
+
+			  padding:8px;
+			  background-color:#BE4B49;
+			  color: black;
+			  margin: 15px auto 0 auto;
+			  display: block;
+			  border: none;
+			  color: rgba(255,255,255,0.8);
+			  box-shadow: 2px 2px 5px rgba(255,255,255,0.6);
+		}
+
+	#exit:focus {
+
+  				outline:0;
+		}
+
+}  
