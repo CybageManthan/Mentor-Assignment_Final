@@ -1,6 +1,6 @@
 (function(global){ 
 
-var formObject = {}; /*Create an object which will use outside of the function*/
+var formObject = {}; /*Create an object which will only will be public.*/
 
 
 function validateData() {
@@ -78,14 +78,8 @@ function validateData() {
 		var IsFirstNameValid = validate_firstname(firstname);
 		var IsEmployeeidValid = validate_employeeid(empid);
 		
-		/* Uncomment this code if you want to validate the other 3 parameters*/
-
-		/*var IsLastNameisValid = validate_lastname(lastname);
-		var IsLocationisValid = validate_location(location);
-		var IsAboutisValid = validate_about(about);
-*/
-		
-		if(IsPasswordValid.first && IsPasswordValid.second ) {
+        
+        if(IsPasswordValid.first && IsPasswordValid.second ) {
 
 			if(Password === C_password) {
 
@@ -101,12 +95,6 @@ function validateData() {
 
 		return IsUserNameValid && IsEmailValid && IsPassCnPassSame && IsEmployeeidValid && IsFirstNameValid;
 
-		/*if(IsUserNameValid && IsEmailValid && IsPassCnPassSame && IsEmployeeidValid && IsFirstNameValid) {
-		 return true;
-		} else {
-		 	return false;
-		 }*/
-		
 		}
 
 		/* function to validate username */
@@ -232,7 +220,8 @@ function validateData() {
 				var Re_firstname = /^[A-Za-z]{3,8}$/;
 
 				if(Re_firstname.test(firstname)) { return true; } else {
-
+                
+                jQuery("#FirstName").addClass("red_alert");    
 				jQuery("#FirstName").attr("placeholder","FirstName should be >3 & <8").val("");
 				return false;
 				}
@@ -266,54 +255,8 @@ function validateData() {
 
 		}
         
-        
-		/* Validating the LastName */
-
-		/*function validate_lastname(lastname) {
-
-			
-			var Re_lastname = /^[A-Za-z]*$/;
-
-			if(Re_lastname.test(lastname)) { return true; } else {
-
-				jQuery("#LastName").attr("placeholder","LastName should be in alphabatic").val("");
-				return false;
-			}
-
-
-		}
-	*/
-        /* Validating the Location */
-        
-/*		function validate_location(location){
-
-			
-			var Re_location = /^[A-Za-z\s]*$/;
-
-			if(Re_location.test(location)) { return true; } else {
-
-				jQuery("#Location").attr("placeholder","Location should be in alphabatic").val("");
-				return false;
-			}
-
-		}
-
-         Validating the About 
-        
-		function validate_about(about) {
-			
-			var Re_about = /^[A-Za-z\s]*$/;
-
-			if(Re_about.test(about)) { return true; } else {
-
-				jQuery("#About").attr("placeholder","About should be in alphabatic").val("");
-				return false;
-			}
-
-		}
-*/
-
-	/*----------------------------- End of submit event --------------------- */
+      
+/*----------------------------- End of submit event --------------------- */
 
 	});
 
@@ -345,6 +288,7 @@ function validateData() {
         jQuery("#Confirm").removeClass("red_alert");
         jQuery("#Confirm").attr("placeholder","Confirm Password");
         jQuery("#FirstName").val("");
+        jQuery("#FirstName").removeClass("red_alert");  
         jQuery("#FirstName").attr("placeholder","FirstName");
         jQuery("#LastName").val("");
         jQuery("#LastName").attr("placeholder","LastName");
@@ -384,38 +328,3 @@ global.$formObject = formObject; /*exposing the object*/
 
 /*Calling the function to perform validation of the form data. */
 $formObject.validateFormData();
-
-/* ---------------------------- extra ---------------------- */
-
-        var xOffset = 10;
-        var yOffset = 20;
-
-        $("#Username").focus(function(e) {
-            this.t = this.title;
-            this.title = "";
-            $("body").append("<span id='tooltip'>" + this.t + "</span>");
-            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px").fadeIn("slow"); 
-        });
-
-        $("input").blur(function(e) {
-            this.title = this.t;
-            $("#tooltip").remove();
-
-            /*$("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px");   */
-        });   
-    
-        $("#Email").focus(function(e) {
-            this.t = this.title;
-            this.title = "";
-            $("body").append("<span id='tooltip'>" + this.t + "</span>");
-            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px").fadeIn("fast"); 
-        });
-       
-        $("#Password").focus(function(e) {
-            this.t = this.title;
-            this.title = "";
-            $("body").append("<span id='tooltip'>" + this.t + "</span>");
-            $("#tooltip").css("top", (e.pageY - xOffset) + "px").css("left", (e.pageX + yOffset) + "px").fadeIn("fast"); 
-        });
-            
-      

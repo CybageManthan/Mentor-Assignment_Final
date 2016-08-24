@@ -198,9 +198,15 @@ body {
 	    @extend %common_wrapper1;
 	    padding:7px;
 	    margin:10px 0 0 0;
-	    display:block;    
+	    display:block;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 	}
-
+    
+    .user_upload:hover {
+    
+    	@extend %common_hoverstyle;
+    }
+    
 	input[type="file"] 
     {
         @extend %common_hideinputtypefile;
@@ -291,7 +297,6 @@ body {
   }
 }
   
-}
 
 .Greetings {
     
@@ -315,6 +320,14 @@ body {
 
         	@extend %common_h3_header_style;
         }
+        
+        #user_greet {
+            width: 17%;
+            display: inline-block;
+            margin: 0;
+            font-size: 90%;
+            padding:7px;
+        }    
     
     }
 

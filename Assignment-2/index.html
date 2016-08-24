@@ -4,7 +4,7 @@
     	<meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1" >
     	<title>Assignment-1</title>
-    	<link rel="stylesheet" href="css/main.css">
+    	<link rel="stylesheet" href="css/main.min.css">
     </head>
     <body>
     <header class="Header">
@@ -36,15 +36,15 @@
                  <label for="file-upload" class="user_submit">
                      Browse</label>
                  <input id="file-upload" type="file"/> <br>
-                 <input type="submit" value="Upload" class="user_upload" />
-                 <!-- <button type="button" class="user_upload">Upload</button> -->
+                 <button type="submit" class="user_upload" >Upload</button>
             </form> <!-- Form completed -->
     	</section> <!-- End of .wrapper1 class -->
     	
         <section class="wrapper2">
+           
             <form class="user_form">
-
             <section class="login_info"> <!-- Login_info start point -->
+                
                 <h3> Login Information </h3>
                     
                     <label>UserName:<sup>*</sup> </label><input class="" title="Enter Username" id="Username" type="text" placeholder="Username"/><br>
@@ -89,10 +89,8 @@
             </section> <!-- End of .Greetings Section -->
 
             <section class="form_submit">
-               <!--  <button type="button">Cancel</button>
-                <button type="button">Save</button> -->
-                <input type="button" id="reset_form" value="Cancel" />
-                <input type="button" id="submit_form" value="Save" >
+                <button type="button" id="reset_form">Cancel</button>
+                <button type="button" id="submit_form">Save</button>
              </section> <!-- End of .form_submit class -->
             </form> <!-- End of Form with class = .user_form -->
     </section>
@@ -101,15 +99,13 @@
 
     <footer>
     </footer>
-    
-    <!--<dialog id="Form_output">  
-	</dialog> -->  
+
     
     <div id="Form_output" style="visibility:hidden">  
 	</div>  
 
     <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/script.min.js"></script>
     </body>
 
 
