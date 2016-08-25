@@ -339,7 +339,7 @@ body:after {
 /* ----------------- For chrome ------------- */
 .red_alert::-webkit-input-placeholder {
 color: #BE4B49 !important;
-background:url('../images/caution2.PNG') right no-repeat ;
+background:url('../images/cross.ico') right no-repeat ;
 line-height: 1.8em;
 font-weight: 480;
 letter-spacing: 0.4px;
@@ -348,6 +348,7 @@ letter-spacing: 0.4px;
 /*---------------- For Mozilla---------------*/
 .red_alert::-moz-placeholder {
 color: #D51818 !important;
+background:url('../images/cross.ico') right no-repeat ;
 line-height: 1.2em;
 font-weight: 480;
 letter-spacing: 0.4px;
